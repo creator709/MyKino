@@ -14,74 +14,55 @@ body {
 
 /* HEADER */
 header {
-  background: #111;
+  background: black;
   padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo {
   color: red;
   font-size: 22px;
-  font-weight: bold;
 }
 
-.search {
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-}
-
-/* MOVIES GRID */
+/* ГЛАВНАЯ */
 .movies {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 15px;
-  padding: 15px;
+  padding: 20px;
 }
 
 .movie {
-  background: #1a1a1a;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: 0.3s;
-}
-
-.movie:hover {
-  transform: scale(1.05);
+  width: 200px;
+  cursor: pointer;
 }
 
 .movie img {
   width: 100%;
-}
-
-.title {
-  padding: 10px;
-  font-size: 14px;
-}
-
-/* PLAYER PAGE */
-.player-page {
-  display: none;
-  padding: 15px;
-}
-
-.back {
-  margin-bottom: 10px;
-  display: inline-block;
-  color: red;
-  cursor: pointer;
-}
-
-video {
-  width: 100%;
   border-radius: 10px;
 }
 
+/* СТРАНИЦА ПЛЕЕРА */
+.player-page {
+  display: none;
+  padding: 20px;
+}
+
+.back {
+  color: red;
+  margin-bottom: 10px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* ПЛЕЕР */
+.player-box {
+  height: 300px;
+  background: black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+}
+
+/* КНОПКИ */
 .episodes button {
   margin: 5px;
-  padding: 8px;
+  padding: 10px;
   background: red;
   color: white;
   border: none;
@@ -90,42 +71,43 @@ video {
 </style>
 
 </head>
+
 <body>
 
-<header>
-  <div class="logo">MyKino 🎬</div>
-  <input class="search" placeholder="Поиск...">
-</header>
+<header>MyKino 🎬</header>
 
 <!-- ГЛАВНАЯ -->
-<div id="home">
+<div id="home" class="movies">
 
-  <div class="movies">
-
-    <div class="movie" onclick="openPlayer()">
-      <img src="IMG_20260330_235653.jpg">
-      <div class="title">Слабый герой</div>
-    </div>
-
+  <div class="movie" onclick="openPlayer()">
+    <img src="IMG_20260330_235653.jpg">
+    <p>Слабый герой</p>
   </div>
 
 </div>
 
-<!-- СТРАНИЦА ПЛЕЕРА -->
-<div class="player-page" id="playerPage">
+<!-- СТРАНИЦА ДОРАМЫ -->
+<div id="playerPage" class="player-page">
 
   <div class="back" onclick="goBack()">← Назад</div>
 
   <h2>Слабый герой</h2>
 
-  <video controls id="player">
-    <source src="video1.mp4" type="video/mp4">
-  </video>
+  <!-- ПЛЕЕР -->
+  <div class="player-box" id="player">
+    Выбери серию
+  </div>
 
+  <!-- КНОПКИ -->
   <div class="episodes">
-    <button onclick="changeVideo('video1.mp4')">1 серия</button>
-    <button onclick="changeVideo('video2.mp4')">2 серия</button>
-    <button onclick="changeVideo('video3.mp4')">3 серия</button>
+    <button onclick="play(1)">1 серия</button>
+    <button onclick="play(2)">2 серия</button>
+    <button onclick="play(3)">3 серия</button>
+    <button onclick="play(4)">4 серия</button>
+    <button onclick="play(5)">5 серия</button>
+    <button onclick="play(6)">6 серия</button>
+    <button onclick="play(7)">7 серия</button>
+    <button onclick="play(8)">8 серия</button>
   </div>
 
 </div>
@@ -141,8 +123,9 @@ function goBack() {
   document.getElementById("playerPage").style.display = "none";
 }
 
-function changeVideo(file) {
-  document.getElementById("player").src = file;
+function play(ep) {
+  document.getElementById("player").innerHTML =
+    "Сейчас выбрана серия: " + ep;
 }
 </script>
 
