@@ -12,86 +12,96 @@ body {
   color: white;
 }
 
-/* HEADER */
 header {
   background: black;
-  padding: 15px 20px;
+  padding: 15px;
   font-size: 24px;
   color: red;
-  font-weight: bold;
 }
 
-/* GRID */
 .container {
   padding: 20px;
 }
 
-.movies {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.card {
-  width: 180px;
-  background: #1a1a1a;
+img {
+  width: 200px;
   border-radius: 10px;
-  overflow: hidden;
-  transition: 0.3s;
 }
 
-.card:hover {
-  transform: scale(1.08);
+.player {
+  margin-top: 20px;
 }
 
-.card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
+.buttons {
+  margin-top: 15px;
 }
 
-.title {
+.buttons button {
+  margin: 5px;
   padding: 10px;
-  font-size: 14px;
-}
-
-/* BUTTON */
-.btn {
-  display: block;
-  margin: 10px;
-  padding: 8px;
   background: red;
-  text-align: center;
-  border-radius: 5px;
   color: white;
-  text-decoration: none;
+  border: none;
+  border-radius: 5px;
 }
 </style>
-
 </head>
+
 <body>
 
 <header>MyKino 🎬</header>
 
 <div class="container">
 
-  <h2>Дорамы</h2>
+  <h2>Слабый герой</h2>
 
-  <div class="movies">
+  <img src="IMG_20260330_235653.jpg">
 
-    <!-- Слабый герой -->
-    <div class="card">
-      <img src="IMG_20260330_235653.jpg">
-      <div class="title">Слабый герой</div>
+  <!-- Плеер -->
+  <div class="player">
+    <iframe id="videoPlayer"
+      width="100%" height="400"
+      src=""
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
 
-      <a href="https://youtu.be/Cxn6G0jiUk0" target="_blank" class="btn">
-        Смотреть
-      </a>
-    </div>
-
+  <!-- Кнопки серий -->
+  <div class="buttons">
+    <button onclick="play(1)">1 серия</button>
+    <button onclick="play(2)">2 серия</button>
+    <button onclick="play(3)">3 серия</button>
+    <button onclick="play(4)">4 серия</button>
+    <button onclick="play(5)">5 серия</button>
+    <button onclick="play(6)">6 серия</button>
+    <button onclick="play(7)">7 серия</button>
+    <button onclick="play(8)">8 серия</button>
   </div>
 
 </div>
+
+<script>
+function play(ep) {
+
+  if (ep == 1) {
+    document.getElementById("videoPlayer").src =
+    "https://www.youtube.com/embed/Cxn6G0jiUk0";
+  }
+
+  if (ep == 2) {
+    document.getElementById("videoPlayer").src =
+    "https://www.youtube.com/embed/Cxn6G0jiUk0";
+  }
+
+  if (ep == 3) {
+    document.getElementById("videoPlayer").src =
+    "https://www.youtube.com/embed/Cxn6G0jiUk0";
+  }
+
+  // добавишь другие серии потом
+}
+</script>
 
 </body>
 </html>
