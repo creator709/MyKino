@@ -6,128 +6,104 @@
 
 <style>
 body {
-  margin: 0;
-  font-family: Arial;
-  background: #111;
-  color: white;
+    margin: 0;
+    font-family: Arial;
+    background: #0f0f0f;
+    color: white;
 }
 
 /* HEADER */
 header {
-  background: #000;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background: #111;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-  font-size: 22px;
-  color: #e50914;
-  font-weight: bold;
+    font-size: 22px;
+    font-weight: bold;
+    color: #e50914;
 }
 
 .search {
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
+    padding: 7px;
+    border-radius: 5px;
+    border: none;
 }
 
-/* MOVIES GRID */
-.container {
-  padding: 20px;
-}
-
+/* GRID */
 .movies {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 15px;
 }
 
-.card {
-  background: #1c1c1c;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: 0.3s;
+.movie {
+    background: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
 }
 
-.card:hover {
-  transform: scale(1.05);
+.movie:hover {
+    transform: scale(1.05);
 }
 
-.card img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
+.movie img {
+    width: 100%;
 }
 
-.card h3 {
-  margin: 10px;
-  font-size: 16px;
+.movie-title {
+    padding: 10px;
+    font-size: 14px;
 }
 
-.card button {
-  margin: 10px;
-  padding: 8px;
-  width: 90%;
-  background: #e50914;
-  border: none;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  color: gray;
+/* BUTTON */
+.btn {
+    display: block;
+    text-align: center;
+    background: #e50914;
+    padding: 8px;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    border-radius: 5px;
 }
 </style>
-
 </head>
+
 <body>
 
 <header>
-  <div class="logo">MyKino</div>
-  <input class="search" placeholder="Поиск фильмов...">
+    <div class="logo">MyKino 🎬</div>
+    <input class="search" placeholder="Поиск...">
 </header>
 
-<div class="container">
-  <h2>Фильмы</h2>
+<div class="movies">
 
-  <div class="movies">
-
-    <div class="card">
-      <img src="https://picsum.photos/300/400?random=1">
-      <h3>Фильм 1</h3>
-      <button>Смотреть</button>
+    <div class="movie">
+        <img src="https://via.placeholder.com/300x400">
+        <d
+          iv class="movie-title">Фильм 1</div>
+        <a class="btn" href="#">Смотреть</a>
     </div>
 
-    <div class="card">
-      <img src="https://picsum.photos/300/400?random=2">
-      <h3>Фильм 2</h3>
-      <button>Смотреть</button>
+    <div class="movie">
+        <img src="https://via.placeholder.com/300x400">
+        <div class="movie-title">Фильм 2</div>
+        <a class="btn" href="#">Смотреть</a>
     </div>
 
-    <div class="card">
-      <img src="https://picsum.photos/300/400?random=3">
-      <h3>Фильм 3</h3>
-      <button>Смотреть</button>
+    <div class="movie">
+        <img src="https://via.placeholder.com/300x400">
+        <div class="movie-title">Фильм 3</div>
+        <a class="btn" href="#">Смотреть</a>
     </div>
 
-    <div class="card">
-      <img src="https://picsum.photos/300/400?random=4">
-      <h3>Фильм 4</h3>
-      <button>Смотреть</button>
-    </div>
-
-  </div>
 </div>
 
-<footer>
-  © 2026 MyKino
-</footer>
-
 </body>
-      </html>
+</html>
