@@ -63,7 +63,7 @@ video {
 <!-- ПЛЕЕР -->
 <video controls id="player"></video>
 
-<!-- КНОПКИ 12 СЕРИЙ -->
+<!-- КНОПКИ -->
 <div class="buttons">
   <button onclick="play(1)">1 серия</button>
   <button onclick="play(2)">2 серия</button>
@@ -87,8 +87,12 @@ function play(ep) {
   let player = document.getElementById("player");
 
   if (ep == 1) {
-    player.src = "video1.mp4"; // ⚠️ ЗАМЕНИ НА СВОЁ ВИДЕО
+
+    // 🔥 ВСТАВЬ СЮДА ССЫЛКУ НА ВИДЕО
+    player.src = "ССЫЛКА_НА_ТВОЁ_ВИДЕО";
+
     player.play();
+
   } else {
     alert("Серия пока не добавлена");
   }
