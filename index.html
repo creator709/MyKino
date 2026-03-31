@@ -58,12 +58,13 @@ video {
 
 <h2>Стандартная процедура идеального брака</h2>
 
-<img src="IMG_20260330_235653.jpg" class="poster">
+<!-- ✅ ТВОЯ КАРТИНКА -->
+<img src="IMG_20260331_095959.jpg" class="poster">
 
-<!-- ПЛЕЕР -->
+<!-- 🎬 ПЛЕЕР -->
 <video controls id="player"></video>
 
-<!-- КНОПКИ -->
+<!-- 🔴 КНОПКИ СЕРИЙ -->
 <div class="buttons">
   <button onclick="play(1)">1 серия</button>
   <button onclick="play(2)">2 серия</button>
@@ -87,12 +88,8 @@ function play(ep) {
   let player = document.getElementById("player");
 
   if (ep == 1) {
-
-    // 🔥 ВСТАВЬ СЮДА ССЫЛКУ НА ВИДЕО
-    player.src = "ССЫЛКА_НА_ТВОЁ_ВИДЕО";
-
+    player.src = "ССЫЛКА_НА_ВИДЕО"; // ← вставишь свою
     player.play();
-
   } else {
     alert("Серия пока не добавлена");
   }
