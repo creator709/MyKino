@@ -7,12 +7,11 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial;
   background: #0e0e0e;
   color: white;
+  font-family: Arial;
 }
 
-/* HEADER */
 header {
   background: black;
   padding: 15px;
@@ -20,47 +19,27 @@ header {
   font-size: 22px;
 }
 
-/* ГЛАВНАЯ */
-.movies {
+.container {
   padding: 20px;
 }
 
-.movie {
+.poster {
   width: 200px;
-  cursor: pointer;
+  border-radius: 10px;
 }
 
-.movie img {
+video {
   width: 100%;
+  margin-top: 20px;
   border-radius: 10px;
-}
-
-/* СТРАНИЦА ПЛЕЕРА */
-.player-page {
-  display: none;
-  padding: 20px;
-}
-
-.back {
-  color: red;
-  margin-bottom: 10px;
-  display: inline-block;
-  cursor: pointer;
-}
-
-/* ПЛЕЕР */
-.player-box {
-  height: 300px;
   background: black;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: gray;
 }
 
-/* КНОПКИ */
-.episodes button {
+.buttons {
+  margin-top: 15px;
+}
+
+.buttons button {
   margin: 5px;
   padding: 10px;
   background: red;
@@ -69,63 +48,51 @@ header {
   border-radius: 5px;
 }
 </style>
-
 </head>
 
 <body>
 
 <header>MyKino 🎬</header>
 
-<!-- ГЛАВНАЯ -->
-<div id="home" class="movies">
+<div class="container">
 
-  <div class="movie" onclick="openPlayer()">
-    <img src="IMG_20260330_235653.jpg">
-    <p>Слабый герой</p>
-  </div>
+<h2>Стандартная процедура идеального брака</h2>
 
+<img src="IMG_20260330_235653.jpg" class="poster">
+
+<!-- ПЛЕЕР -->
+<video controls id="player"></video>
+
+<!-- КНОПКИ 12 СЕРИЙ -->
+<div class="buttons">
+  <button onclick="play(1)">1 серия</button>
+  <button onclick="play(2)">2 серия</button>
+  <button onclick="play(3)">3 серия</button>
+  <button onclick="play(4)">4 серия</button>
+  <button onclick="play(5)">5 серия</button>
+  <button onclick="play(6)">6 серия</button>
+  <button onclick="play(7)">7 серия</button>
+  <button onclick="play(8)">8 серия</button>
+  <button onclick="play(9)">9 серия</button>
+  <button onclick="play(10)">10 серия</button>
+  <button onclick="play(11)">11 серия</button>
+  <button onclick="play(12)">12 серия</button>
 </div>
-
-<!-- СТРАНИЦА ДОРАМЫ -->
-<div id="playerPage" class="player-page">
-
-  <div class="back" onclick="goBack()">← Назад</div>
-
-  <h2>Слабый герой</h2>
-
-  <!-- ПЛЕЕР -->
-  <div class="player-box" id="player">
-    Выбери серию
-  </div>
-
-  <!-- КНОПКИ -->
-  <div class="episodes">
-    <button onclick="play(1)">1 серия</button>
-    <button onclick="play(2)">2 серия</button>
-    <button onclick="play(3)">3 серия</button>
-    <button onclick="play(4)">4 серия</button>
-    <button onclick="play(5)">5 серия</button>
-    <button onclick="play(6)">6 серия</button>
-    <button onclick="play(7)">7 серия</button>
-    <button onclick="play(8)">8 серия</button>
-  </div>
 
 </div>
 
 <script>
-function openPlayer() {
-  document.getElementById("home").style.display = "none";
-  document.getElementById("playerPage").style.display = "block";
-}
-
-function goBack() {
-  document.getElementById("home").style.display = "block";
-  document.getElementById("playerPage").style.display = "none";
-}
-
 function play(ep) {
-  document.getElementById("player").innerHTML =
-    "Сейчас выбрана серия: " + ep;
+
+  let player = document.getElementById("player");
+
+  if (ep == 1) {
+    player.src = "video1.mp4"; // ⚠️ ЗАМЕНИ НА СВОЁ ВИДЕО
+    player.play();
+  } else {
+    alert("Серия пока не добавлена");
+  }
+
 }
 </script>
 
